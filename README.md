@@ -46,4 +46,10 @@ The goal of this app is to help us bring all these parameters together, show emp
   - How many different positions are there in the company ( producers of food, delivering, ... )
   - How to use their data and if we should
 
-  
+
+## App
+### Ideas to implement
+- Statistics (for single employee, factory, global avarage)
+- Challenges proposed by Bell to employees
+- Activities logged (by confirming a choice taken)
+- Alert for new challenges, new points earned or new activities required to log
