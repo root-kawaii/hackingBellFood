@@ -19,13 +19,14 @@ The goal of the app is to integrate as many existing parameters as we can. Exist
 
 
 ### Carbon footprint tracking apps
-https://www.makeuseof.com/tracking-carbon-footprint-best-apps/
-https://traveltomorrow.com/5-apps-that-can-help-you-track-your-carbon-footprint/
-https://ecocart.io/eco-friendly-apps-to-reduce-your-brands-carbon-footprint/
-https://www.footprintapp.org/
-https://www.wwf.org.uk/myfootprint
-https://apps.apple.com/us/app/my-little-plastic-footprint/id1268714494
-https://www.thecapture.club/
+- https://www.makeuseof.com/tracking-carbon-footprint-best-apps/
+- https://traveltomorrow.com/5-apps-that-can-help-you-track-your-carbon-footprint/
+- https://ecocart.io/eco-friendly-apps-to-reduce-your-brands-carbon-footprint/
+- https://www.footprintapp.org/
+- https://www.wwf.org.uk/myfootprint
+- https://apps.apple.com/us/app/my-little-plastic-footprint/id1268714494
+- https://www.thecapture.club/
+
 
 ### Goal
 
