@@ -18,6 +18,14 @@
 The goal of the app is to integrate as many existing parameters as we can. Existing interfaces (e.g. energy management) are used and publicly available key figures (e.g. CO2 emission for air travel) can also be used. Our expectation is a working prototype / app that demonstrates how to implement the requirements of the use cases and how to use it for the end user. However, there are no restrictions on the technologies to be used. There is no default for the programming and the tools used. Your creativity is needed here. No live interfaces from Bell Food Group systems are to be included for this app at this time. This will be taken into account in a later implementation of the app. The energy data provided from the production plants can be used from the .CSV files.
 
 
+### Carbon footprint tracking apps
+https://www.makeuseof.com/tracking-carbon-footprint-best-apps/
+https://traveltomorrow.com/5-apps-that-can-help-you-track-your-carbon-footprint/
+https://ecocart.io/eco-friendly-apps-to-reduce-your-brands-carbon-footprint/
+https://www.footprintapp.org/
+https://www.wwf.org.uk/myfootprint
+https://apps.apple.com/us/app/my-little-plastic-footprint/id1268714494
+
 ### Goal
 
 The goal of this app is to help us bring all these parameters together, show employees their contribution to our sustainability goals, and motivate them to help us achieve them. In order to promote our employees contribution, they should be able to collect "Eco-Points" for their active contributions. Those points for active contributions can be achieved within the areas of environmental and social sustainability
