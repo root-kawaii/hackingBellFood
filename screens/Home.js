@@ -6,6 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 import { Card, Button } from "react-native-paper";
 import { useState } from "react";
+import { colors } from "../constants/colors";
 
 const CHALLENGES = [
   {
@@ -50,13 +51,17 @@ const Score = () => {
         left: 0,
         color: "black",
         fontWeight: "bold",
-        fontSize: 50,
+        fontSize: 50, /* spazio a dx con la moneta eventualmente*/
       }}
     >
       {points}
     </Text>
   );
 };
+
+
+
+/* titolo, fixing cards */
 
 const Icon = () => {
   return <Ionicons name={"flower-outline"} size={48} color={"tomato"} />;
@@ -69,7 +74,7 @@ const Carta = ({ title, content, reward, buttonText, todo, onPress }) => {
         <Text style={styles.paragraph}>{content}</Text>
         <Card.Actions>
           <Text style={styles.paragraph}>{reward}<Ionicons name={"flower-outline"} size={12} color={"tomato"} /></Text>
-          <Button buttonColor="green" onPress={onPress}>{buttonText}</Button>
+          <Button style={styles.button} onPress={onPress}>{buttonText}</Button>
         </Card.Actions>
       </Card>
       );
@@ -123,31 +128,37 @@ const styles = StyleSheet.create({
     // alignItems: "flex-end",
     // right: 0,
     // left: 0,
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 15,
+    marginBottom: 15,
   },
   card: {
-    margin: 20,
-    padding: 10,
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 5,
+    marginRight: 5,
+    padding: 7,
   },
   container: {
     // display:"flex",
     flex: 1,
     justifyContent: "flex-end",
-    padding: 20,
+    padding: 10,
     backgroundColor: "#ecf0f1",
   },
   title: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
     margin: 10,
   },
   paragraph: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "normal",
     textAlign: "center",
-    padding: 10,
+    padding: 5,
+  },
+  button: {
+    backgroundColor: colors.green,
   },
 });
 
