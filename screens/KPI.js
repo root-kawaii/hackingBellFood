@@ -52,14 +52,16 @@ const DATA = [
   {
     id: 3,
     data: {
-      title: "Greenhouse",
+      title: "Seasonal Greenhouse Gas Emissions",
       Viz: Hbar,
       viz_data: [
-        { x: "Winter", y: 24 },
-        { x: "Spring", y: 32 },
-        { x: "Summer", y: 45 },
-        { x: "Autumn", y: 24 },
+        { x: "Winter", y: -7 },
+        { x: "Spring", y: 10 },
+        { x: "Summer", y: -5 },
+        { x: "Autumn", y: 6 },
       ],
+      description: "pippo antonio",
+      hidden: "ueue",
     },
   },
 ];
@@ -67,7 +69,6 @@ const DATA = [
 const Item = ({ data, onPress, backgroundColor, textColor }) => {
   const [open, setOpen] = useState(false);
   const { title, Viz, viz_data, description, hidden } = data;
-  console.log("card ", title, " is open? ", open);
   return (
     <TouchableOpacity
       onPress={() => {
@@ -90,7 +91,6 @@ const Item = ({ data, onPress, backgroundColor, textColor }) => {
           <Text>{hidden}</Text>
         </View>
       )}
-      {/* <Text style={[styles.title, { color: textColor }]}>{data.title}</Text> */}
     </TouchableOpacity>
   );
 };
