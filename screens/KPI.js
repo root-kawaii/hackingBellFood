@@ -16,6 +16,7 @@ import SnowFlake from "react-native-vector-icons/FontAwesome";
 import Sun from "react-native-vector-icons/FontAwesome5";
 import Flower from "react-native-vector-icons/MaterialCommunityIcons";
 import Leaf from "react-native-vector-icons/FontAwesome5";
+import col from "../constants/colors";
 
 const DATA = [
   {
@@ -27,29 +28,19 @@ const DATA = [
     data: {
       title: "Greenhouse",
       Viz: Hbar,
-      viz_data: [
-        {
-          value: 250,
-          label: <SnowFlake name="snowflake-o" size={18} color="#900" />,
-        },
-
-        {
-          value: 500,
-          label: <Flower name="flower" size={18} color="#900" />,
-          frontColor: "#177AD5",
-        },
-
-        {
-          value: 745,
-          label: <Sun name="sun" size={18} color="#900" />,
-          frontColor: "#177AD5",
-        },
-
-        {
-          value: 320,
-          label: <Leaf name="leaf" size={18} color="#900" />,
-        },
-      ],
+      viz_data: {
+        labels: [
+          <SnowFlake name="snowflake-o" />,
+          <Flower name="flower" />,
+          Sun,
+          Leaf,
+        ],
+        datasets: [
+          {
+            data: [20, 45, 28, 80, 99, 43],
+          },
+        ],
+      },
     },
   },
   {
@@ -103,7 +94,7 @@ export default function KPIScreen() {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
+    const backgroundColor = item.id === selectedId ? "#679436" : "#fff";
     const color = item.id === selectedId ? "white" : "black";
 
     return (
