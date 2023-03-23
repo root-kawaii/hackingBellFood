@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 import { Card, Button } from "react-native-paper";
-import { useState } from 'react';
+import { useState } from "react";
 
 const App = () => {
   const [elementVisible, setElementVisible] = useState(false);
@@ -14,25 +14,25 @@ const App = () => {
         style={{
           padding: 20,
           flex: 1,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {elementVisible ? (
           <View
             style={{
-              backgroundColor: 'blue',
+              backgroundColor: "blue",
               paddingHorizontal: 16,
               paddingVertical: 8,
               marginBottom: 20,
             }}
           >
-            <Text style={{ color: 'white', fontSize: 18 }}>Hello world!</Text>
+            <Text style={{ color: "white", fontSize: 18 }}>Hello world!</Text>
           </View>
         ) : null}
         <Button
-          title={elementVisible ? 'Hide Element' : 'Show Element'}
+          title={elementVisible ? "Hide Element" : "Show Element"}
           onPress={() => setElementVisible(!elementVisible)}
         />
       </View>
@@ -50,9 +50,9 @@ const CHALLENGES = [
   {
     id: 2,
     title: "Go vegan for a day",
-    content: "Try changing your food habits, eating veggies instead of meat will improve your carbon footprint",
+    content:
+      "Try changing your food habits, eating veggies instead of meat will improve your carbon footprint",
     reward: 100,
-    
   },
   {
     id: 3,
@@ -64,7 +64,8 @@ const CHALLENGES = [
   {
     id: 4,
     title: "Secondhand clothing",
-    content: "avoid waste of precious resources and spend less by buying secondhand clothing",
+    content:
+      "avoid waste of precious resources and spend less by buying secondhand clothing",
     reward: 50,
   },
 ];
@@ -117,14 +118,12 @@ const renderItem = ({ item }) => {
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <App  />
-      <Text style={styles.score}>
-        aaaaaaaaaaaaaa
-      </Text>
-
+      <App />
+      <Text style={styles.score}>aaaaaaaaaaaaaa</Text>
 
       <Text style={styles.score}>
-        {" "} <Score /> <Icon />{" "}
+        {" "}
+        <Score /> <Icon />{" "}
       </Text>
 
       <FlatList
@@ -132,11 +131,7 @@ export default function HomeScreen() {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-    
-    
-
     </View>
-    
   );
 }
 
@@ -157,9 +152,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#ecf0f1",
   },
   topContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     justifyContent: "flex-end",
-    position: 'absolute',
+    position: "absolute",
     top: 10,
     right: 0,
     left: 0,
