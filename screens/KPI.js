@@ -29,10 +29,10 @@ const DATA = [
       title: "ESG Indicators",
       Viz: Cake,
       viz_data: [
-        { x: " ", y: 50 },
-        { x: " ", y: 30 },
-        { x: " ", y: 20 },
-        { x: " ", y: 10 },
+        { x: 1, y: 50, label: "50" },
+        { x: 2, y: 30, label: "30" },
+        { x: 3, y: 20, label: "20" },
+        { x: 4, y: 10, label: "10" },
       ],
       description:
         "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
