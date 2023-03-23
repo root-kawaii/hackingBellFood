@@ -11,7 +11,6 @@ import KPIScreen from "./screens/KPI";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Login from "./screens/Login";
 import NavigationBar from "./screens/NavigationBar";
-import Footprint from "./screens/Footprint";
 
 const Stack = createNativeStackNavigator();
 
