@@ -8,40 +8,39 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./screens/Home";
 import RankScreen from "./screens/Rank";
 import KPIScreen from "./screens/KPI";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import Login from "./screens/Login";
+import NavigationBar from "./NavigationBar";
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const check = getData();
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            switch (route.name) {
-              case "Home":
-                iconName = "ios-information-circle";
-                break;
-              case "Ranking":
-                iconName = "trophy";
-                break;
-              case "KPI":
-                iconName = "cellular";
-            }
-            !focused && (iconName += "-outline");
-
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: "tomato",
-          tabBarInactiveTintColor: "gray",
-          headerShown: false,
-        })}
-      >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Ranking" component={RankScreen} />
-        <Tab.Screen name="KPI" component={KPIScreen} />
-      </Tab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Base"
+          component={NavigationBar}
+          options={{ title: "Navigate" }}
+        ></Stack.Screen>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+const getData = async () => {
+  try {
+    const value = await AsyncStorage.getItem("@storage_Key");
+    if (value !== null) {
+      return true;
+    }
+  } catch (e) {
+    // error reading value
+  }
+};

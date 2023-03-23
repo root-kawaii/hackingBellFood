@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, Text, View, Alert } from "react-native";
-// import { BarChart, LineChart, PieChart } from "react-native-gifted-charts";
+
 import {
   BarChart,
   PieChart,
