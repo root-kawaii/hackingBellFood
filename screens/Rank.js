@@ -3,114 +3,132 @@ import { SafeAreaView, StyleSheet, Image } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 import { Card, Button } from "react-native-paper";
+import { ScrollView, StatusBar } from "react-native";
 
-const CHALLENGES = [
-  {
-    id: 1,
-    title: "Bell Schweiz - Zell",
-    content: "let the clothes dry naturally, save energy",
-    reward: 124,
-    buttonText: "101",
-  },
-  {
-    id: 2,
-    title: "Bell Deutschland - Schiltach",
-    content: "let the clothes dry naturally, save energy",
-    reward: 112,
-    buttonText: "89",
-  },
-  {
-    id: 3,
-    title: "Eisberg - Dällikon Feldhof",
-    content: "let the clothes dry naturally, save energy",
-    reward: 100,
-    buttonText: "78",
-  },
-  {
-    id: 4,
-    title: "Hilcona - Orbe",
-    content: "let the clothes dry naturally, save energy",
-    reward: 100,
-    buttonText: "57",
-  },
-  {
-    id: 5,
-    title: "Süddeutsche Truthahn AG",
-    content: "let the clothes dry naturally, save energy",
-    reward: 100,
-    buttonText: "45",
-  },
-];
+const CHALLENGES = [];
 
-const Carta = ({ title, content, reward, buttonText }) => {
+const Carta = ({ title, subtitle, position, points }) => {
   return (
     <Card style={styles.card}>
-      <Text style={styles.title}> {title} </Text>
-      <Text style={styles.paragraph}> {content} </Text>
-      <Card.Actions>
-        <Text style={styles.paragraph}> {reward} </Text>
-        <Button buttonColor="green">{buttonText}</Button>
-      </Card.Actions>
+      <Text style={styles.info}>
+        <Text style={styles.position}> {position}. </Text>
+        <Text style={styles.titleCard}> {title} </Text>
+        {"\n"}
+        <Text style={styles.subtitle}> {subtitle} </Text>
+      </Text>
+      <Text style={styles.nums}>
+        <Text style={{ fontSize: 30 }}>
+          {points}{" "}
+          <Ionicons name={"flower-outline"} size={30} color={"tomato"} />
+        </Text>
+      </Text>
     </Card>
   );
 };
 
 const renderItem = ({ item }) => {
   return (
-    <Carta
-      title={item.title}
-      content={item.content}
-      buttonText={item.buttonText}
-    />
+    <Carta title={item.title} position={item.position} points={item.points} />
   );
 };
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <View style={styles.end}>
+          <Text style={styles.title}>March '23</Text>
+        </View>
 
-      <Carta
-        title={"PODIUM"}
-        content={"Bell Food - Basel"}
-        buttonText={"143"}
-      />
+        <ScrollView style={styles.ranking}>
+          <Carta
+            title={"Bell Schweiz"}
+            subtitle={"Zell"}
+            position={1}
+            points={124}
+          />
 
-      <FlatList
-        data={CHALLENGES}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+          <Carta
+            title={"Bell Deutschland"}
+            subtitle={"Schiltach"}
+            position={2}
+            points={89}
+          />
+
+          <Carta
+            title={"Eisberg"}
+            subtitle={"Dällikon Feldhof"}
+            position={3}
+            points={78}
+          />
+
+          <Carta title={"Hilcona"} subtitle={"Orbe"} position={4} points={57} />
+
+          <Carta
+            title={"Süddeutsche Truthahn AG"}
+            subtitle={"Ampfing"}
+            position={5}
+            points={45}
+          />
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  score: {
-    justifyContent: "center",
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  card: {
-    justifyContent: "center",
-    margin: 20,
-    padding: 10,
-  },
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    padding: 20,
-    backgroundColor: "#ecf0f1",
+  end: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   title: {
-    fontSize: 18,
+    marginTop: 15,
+    marginBottom: 15,
+    textAlign: "center",
+    right: 0,
+    left: 0,
+    color: "black",
+    fontSize: 50,
+    fontWeight: "bold",
+  },
+  card: {
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 5,
+    marginRight: 5,
+    padding: 7,
+  },
+  container: {
+    // display:"flex",
+    flex: 1,
+    justifyContent: "flex-end",
+    padding: 10,
+    backgroundColor: "#ecf0f1",
+  },
+  info: {
+    width: "60%",
+    backgroundColor: "red",
+    flex: 1,
+    flexDirection: "row",
+    alignSelf: "flex-start",
+  },
+  nums: {
+    width: "40%",
+    backgroundColor: "yellow",
+    flex: 1,
+    flexDirection: "row",
+    alignSelf: "flex-end",
+  },
+  titleCard: {
+    fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
     margin: 10,
   },
-  paragraph: {
-    fontSize: 14,
-    fontWeight: "normal",
+  position: {
+    fontSize: 16,
+    fontWeight: "700",
     textAlign: "center",
-    padding: 10,
+    padding: 5,
   },
 });
