@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./Home";
+import Footprint from "./Footprint"
 import RankScreen from "./Rank";
 import KPIScreen from "./KPI";
 import QR from "./QR";
@@ -27,6 +28,9 @@ export default function NavigationBar() {
             case "Ranking":
               iconName = "trophy";
               break;
+            case "Footprint":
+              iconName = "podium";
+              break;
             case "KPI":
               iconName = "cellular";
             // case "QR":
@@ -43,6 +47,7 @@ export default function NavigationBar() {
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Ranking" component={RankScreen} />
+      <Tab.Screen name="Footprint" component={Footprint} />
       <Tab.Screen name="KPI" component={KPIScreen} />
       {/* <Tab.Screen name="QR" component={QR} /> */}
     </Tab.Navigator>
