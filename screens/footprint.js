@@ -1,50 +1,55 @@
-import { VictoryPie } from "victory-native";
-import { StyleSheet, View } from "react-native";
+import { VictoryBar, VictoryTheme, VictoryLabel } from "victory-native";
+import { StyleSheet, View, Text } from "react-native";
 import Leaf from "react-native-vector-icons/FontAwesome5";
+import { useState } from "react";
+import ProgressChartElement from "./viz/progressChartElement";
+import { Button } from "react-native-paper";
+import { SafeAreaView } from "react-native";
 
 export default function FootprintScreen() {
   const data = [
-    { x: "Cats", y: 24 },
-    { x: "Dogs", y: 32 },
-    { x: "Birds", y: 45 },
-    { x: "Cats", y: 24 },
-    { x: "Dogs", y: 31 },
-    { x: "Birds", y: 55 },
-    { x: "Dogs", y: 43 },
-    { x: "Birds", y: 40 },
+    { x: "Emissions", y: 42 },
+    { x: "Water", y: 57 },
+    { x: "Recycle", y: 52 },
+    { x: "Ecosystem", y: 12 },
+    { x: "Safety", y: 32 },
+    { x: "Employee Condition", y: 38 },
   ];
-
   return (
-    <View style={styles.container}>
-      <VictoryPie
-        data={data}
-        colorScale={[
-          "green",
-          "red",
-          "purple",
-          "cyan",
-          "navy",
-          "blue",
-          "orange",
-          "brown",
-        ]}
-        cornerRadius={({ datum }) => datum.y * 0.1}
-        labelRadius={({ innerRadius }) => innerRadius + 5}
-        radius={({ datum }) => 50 + datum.y * 2}
-        innerRadius={50}
-        style={{
-          labels: { fill: "white", fontSize: 15, fontWeight: "bold" },
-        }}
-      />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View>
+        <Text style={styles.title}>Your CO2 Footprint</Text>
+      </View>
+      <View style={styles.container}>
+        <VictoryBar
+          labels={({ datum }) => `${datum.x}`}
+          labelComponent={<VictoryLabel dy={0} />}
+          barWidth={40}
+          horizontal
+          height={475}
+          style={{
+            flex: 1,
+            data: { fill: "#40916C" },
+          }}
+          data={data}
+        />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    padding: 20,
+    padding: 0,
     backgroundColor: "#ecf0f1",
+    marginHorizontal: 0,
+    marginVertical: 0,
+  },
+  title: {
+    marginVertical: 30,
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
