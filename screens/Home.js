@@ -1,5 +1,6 @@
 import { Text, View, FlatList } from "react-native";
 import { SafeAreaView, StyleSheet, Image } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 import { Card, Button, IconButton } from "react-native-paper";
@@ -83,6 +84,8 @@ const Score = () => {
   );
 };
 
+const Stack = createNativeStackNavigator();
+
 const Icon = () => {
   return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
 };
@@ -159,6 +162,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#ecf0f1",
+  },
+  topContainer: {
+    flexDirection: 'row',
+    justifyContent: "flex-end",
+    position: 'absolute',
+    top: 10,
+    right: 0,
+    left: 0,
     padding: 20,
     backgroundColor: "#ecf0f1",
   },
