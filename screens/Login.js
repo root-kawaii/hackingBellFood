@@ -17,13 +17,7 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <form
-        id="form1"
-        role="form"
-        name="form1"
-        action="reg_employer.php"
-        method="post"
-      />
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
