@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
+import IconsLogin from "react-native-vector-icons/FontAwesome";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from "react";
+import { SelectList } from "react-native-dropdown-select-list";
 import {
   StyleSheet,
   Text,
@@ -12,6 +14,12 @@ import {
 } from "react-native";
 
 export default function Login({ navigation }) {
+  const [selected, setSelected] = React.useState("");
+  const data = [
+    { key: "1", value: "Worker" },
+    { key: "2", value: "Manager" },
+    { key: "3", value: "Admin" },
+  ];
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -25,29 +33,18 @@ export default function Login({ navigation }) {
           }}
         />
       </View>
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Password."
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          onChangeText={(password) => {
-            storeData("password", password);
-          }}
-        />
-      </View>
-
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
+      <SelectList
+        placeholderTextColor={"#000"}
+        width={300}
+        maxHeight={120}
+        arrowicon={<IconsLogin name="chevron-down" size={20} color={"black"} />}
+        setSelected={(val) => setSelected(val)}
+        data={data}
+        save="value"
+      />
 
       <TouchableOpacity style={styles.loginBtn}>
-        <Button
-          title="navigate"
-          style={styles.loginText}
-          onPress={() => navigation.navigate("Base")}
-        >
+        <Button title="navigate" onPress={() => navigation.navigate("Base")}>
           LOGIN
         </Button>
       </TouchableOpacity>
@@ -58,11 +55,8 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
     backgroundColor: "#fff",
-
     alignItems: "center",
-
     justifyContent: "center",
   },
 
@@ -71,49 +65,32 @@ const styles = StyleSheet.create({
   },
 
   inputView: {
-    backgroundColor: "#FFC0CB",
-
+    backgroundColor: "#fff",
     borderRadius: 30,
-
-    width: "70%",
-
+    borderColor: "#000",
+    borderWidth: 3,
+    width: 300,
     height: 45,
-
     marginBottom: 20,
-
     alignItems: "center",
   },
 
   TextInput: {
     height: 50,
-
     flex: 1,
-
     padding: 10,
-
     marginLeft: 20,
   },
 
-  forgot_button: {
-    height: 30,
-
-    marginBottom: 30,
-  },
-
   loginBtn: {
-    width: "80%",
-
+    borderWidth: 3,
+    width: 200,
     borderRadius: 25,
-
     height: 50,
-
     alignItems: "center",
-
     justifyContent: "center",
-
     marginTop: 40,
-
-    backgroundColor: "#FF1493",
+    backgroundColor: "#fff",
   },
 });
 
