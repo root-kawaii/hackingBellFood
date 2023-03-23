@@ -31,6 +31,12 @@ const CHALLENGES = [
     content: "get rid of all the highly inefficient lights and substitute them with highly efficient led lights and reduce carbon emissions",
     reward: 50,
   },
+  {
+    id: 4,
+    title: "Secondhand clothing",
+    content: "avoid waste of precious resources and spend less by buying secondhand clothing",
+    reward: 50,
+  },
 ];
 
 
