@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     margin: 20,
     padding: 10,
-    height: 160,
   },
   container: {
     flex: 1,

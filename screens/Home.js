@@ -43,6 +43,8 @@ const Score = () => {
   return (
     <Text
       style={{
+        position: "absolute",
+        flex: 1,
         textAlign: "center",
         right: 0,
         left: 0,
@@ -95,9 +97,11 @@ export default function HomeScreen() {
   
   return (
     <View style={styles.container}>
+      <View style={styles.end}>
       <Text style={styles.score}>
-        <Score /> <Icon />
+        <Score /><Icon />
       </Text>
+      </View>
 
       <FlatList
         data={items}
@@ -109,8 +113,16 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  end:{
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
   score: {
-    justifyContent: "center",
+    flexDirection: "row",
+    // justifyContent: "flex-end",
+    // alignItems: "flex-end",
+    // right: 0,
+    // left: 0,
     marginTop: 20,
     marginBottom: 20,
   },
@@ -119,18 +131,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   container: {
+    // display:"flex",
     flex: 1,
-    justifyContent: "center",
-    padding: 20,
-    backgroundColor: "#ecf0f1",
-  },
-  topContainer: {
-    flexDirection: "row",
     justifyContent: "flex-end",
-    position: "absolute",
-    top: 10,
-    right: 0,
-    left: 0,
     padding: 20,
     backgroundColor: "#ecf0f1",
   },
@@ -148,45 +151,3 @@ const styles = StyleSheet.create({
   },
 });
 
-
-/*
-import React, { useState } from 'react';
-import { SafeAreaView, View, Text, Button } from 'react-native';
-
-const App = () => {
-  const [elementVisible, setElementVisible] = useState(true);
-
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View
-        style={{
-          padding: 20,
-          flex: 1,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        {elementVisible ? (
-          <View
-            style={{
-              backgroundColor: 'blue',
-              paddingHorizontal: 16,
-              paddingVertical: 8,
-              marginBottom: 20,
-            }}
-          >
-            <Button
-          title={elementVisible ? 'Hide Element' : 'Show Element'}
-          onPress={() => setElementVisible(!elementVisible)}
-        />
-          </View>
-        ) : null}
-        
-      </View>
-    </SafeAreaView>
-  );
-};
-
-export default App;
-*/
