@@ -1,9 +1,5 @@
-import { VictoryBar, VictoryTheme, VictoryLabel } from "victory-native";
+import { VictoryBar, VictoryLabel } from "victory-native";
 import { StyleSheet, View, Text } from "react-native";
-import Leaf from "react-native-vector-icons/FontAwesome5";
-import { useState } from "react";
-import ProgressChartElement from "./viz/progressChartElement";
-import { Button } from "react-native-paper";
 import { SafeAreaView } from "react-native";
 
 export default function FootprintScreen() {
