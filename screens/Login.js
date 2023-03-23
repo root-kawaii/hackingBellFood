@@ -50,6 +50,10 @@ export default function Login({ navigation }) {
             if (disabled) return;
             storeData("user", username);
             navigation.navigate("Base");
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "Base" }],
+            });
           }}
         >
           <Text style={styles.btnText}>GET STARTED</Text>
