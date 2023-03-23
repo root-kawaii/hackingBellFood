@@ -11,20 +11,21 @@ export default function HBar({ data }) {
   return (
     <View style={styles.container}>
       <VictoryBar
+        padding={{ top: 10, bottom: 10, left: 20, right: 20 }}
         data={data}
-        height={200}
-        width={300}
+        height={150}
+        width={150}
+        barWidth={35}
         labels={({ datum }) => datum.y}
         style={{ labels: { fill: "white" } }}
-        labelComponent={<VictoryLabel dy={30} />}
+        labelComponent={
+          <VictoryLabel dy={(opts) => (opts.datum.y > 0 ? 30 : -30)} />
+        }
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 0,
-  },
+  container: {},
 });

@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Cake from "./viz/Cake";
+import Cow from "./viz/Cow";
 import Water from "./viz/Water";
 import Hbar from "./viz/HBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -21,7 +22,16 @@ import { colors } from "../constants/colors";
 const DATA = [
   {
     id: 1,
-    data: { title: "Water", Viz: Water, viz_data: 65 },
+    data: { 
+      title: "Water", 
+      Viz: Water, 
+      viz_data: [10, 50],
+      description:
+        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+      hidden:
+        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+    },
+
   },
   {
     id: 2,
@@ -35,7 +45,7 @@ const DATA = [
         { x: 4, y: 10, label: "10" },
       ],
       description:
-        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social.",
       hidden:
         "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
     },
@@ -43,22 +53,34 @@ const DATA = [
   {
     id: 3,
     data: {
-      title: "Greenhouse",
+      title: "Seasonal Greenhouse Gas Emissions",
       Viz: Hbar,
       viz_data: [
-        { x: "Winter", y: 24 },
-        { x: "Spring", y: 32 },
-        { x: "Summer", y: 45 },
-        { x: "Autumn", y: 24 },
+        { x: "Winter", y: -7 },
+        { x: "Spring", y: 10 },
+        { x: "Summer", y: -5 },
+        { x: "Autumn", y: 6 },
       ],
+      description: "pippo antonio",
+      hidden: "ueue",
     },
   },
+  {
+      id: 4,
+      data: {
+        title: "Animal Welfare",
+        Viz: Cow,
+        description:
+          "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+        hidden:
+          "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+      },
+  }
 ];
 
 const Item = ({ data, onPress, backgroundColor, textColor }) => {
   const [open, setOpen] = useState(false);
   const { title, Viz, viz_data, description, hidden } = data;
-  console.log("card ", title, " is open? ", open);
   return (
     <TouchableOpacity
       onPress={() => {
@@ -81,7 +103,6 @@ const Item = ({ data, onPress, backgroundColor, textColor }) => {
           <Text>{hidden}</Text>
         </View>
       )}
-      {/* <Text style={[styles.title, { color: textColor }]}>{data.title}</Text> */}
     </TouchableOpacity>
   );
 };
