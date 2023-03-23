@@ -6,12 +6,14 @@ export default function Cake({ data }) {
   return (
     <View style={styles.item}>
       <VictoryPie
-        radius={100}
-        cornerRadius={({ datum }) => datum.y * 0.5}
-        colorScale={["grey", "red", "yellow", "green"]}
+        radius={70}
+        // cornerRadius={({ datum }) => datum.y * 0.5}
+        colorScale={["green", "yellow", "red", "grey"]}
         data={data}
-        width={270}
-        center={[0, 0]}
+        width={150}
+        height={150}
+        // labels={({ p }) => p.y}
+        // center={[0, 0]}
         hasLegend={false}
       />
     </View>
@@ -20,12 +22,12 @@ export default function Cake({ data }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     padding: 0,
   },
   item: {
-    padding: 20,
-    marginVertical: -60,
-    marginHorizontal: 0,
+    // padding: 20,
+    // marginVertical: -60,
+    // marginHorizontal: 0,
   },
 });

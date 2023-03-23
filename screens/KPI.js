@@ -16,7 +16,7 @@ import SnowFlake from "react-native-vector-icons/FontAwesome";
 import Sun from "react-native-vector-icons/FontAwesome5";
 import Flower from "react-native-vector-icons/MaterialCommunityIcons";
 import Leaf from "react-native-vector-icons/FontAwesome5";
-import col from "../constants/colors";
+import { colors } from "../constants/colors";
 
 const DATA = [
   {
@@ -25,6 +25,23 @@ const DATA = [
   },
   {
     id: 2,
+    data: {
+      title: "ESG Indicators",
+      Viz: Cake,
+      viz_data: [
+        { x: " ", y: 50 },
+        { x: " ", y: 30 },
+        { x: " ", y: 20 },
+        { x: " ", y: 10 },
+      ],
+      description:
+        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+      hidden:
+        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+    },
+  },
+  {
+    id: 3,
     data: {
       title: "Greenhouse",
       Viz: Hbar,
@@ -36,24 +53,12 @@ const DATA = [
       ],
     },
   },
-  {
-    id: 3,
-    data: {
-      title: "Cake",
-      Viz: Cake,
-      viz_data: [
-        { x: "Unavaliable", y: 24 },
-        { x: "Bad", y: 32 },
-        { x: "Medium", y: 45 },
-        { x: "Good", y: 24 },
-      ],
-    },
-  },
 ];
 
 const Item = ({ data, onPress, backgroundColor, textColor }) => {
   const [open, setOpen] = useState(false);
-  const { title, Viz, viz_data } = data;
+  const { title, Viz, viz_data, description, hidden } = data;
+  console.log("card ", title, " is open? ", open);
   return (
     <TouchableOpacity
       onPress={() => {
@@ -62,10 +67,20 @@ const Item = ({ data, onPress, backgroundColor, textColor }) => {
       }}
       style={[styles.item, { backgroundColor }]}
     >
-      <View>
-        <Text style={styles.title}>{title}</Text>
-        <Viz data={viz_data} />
+      <View style={styles.row}>
+        <View>
+          <Viz data={viz_data} />
+        </View>
+        <View style={styles.col}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={{ fontSize: 12, marginTop: 7 }}>{description}</Text>
+        </View>
       </View>
+      {open && (
+        <View style={styles.bottom}>
+          <Text>{hidden}</Text>
+        </View>
+      )}
       {/* <Text style={[styles.title, { color: textColor }]}>{data.title}</Text> */}
     </TouchableOpacity>
   );
@@ -112,5 +127,19 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     textAlign: "center",
+  },
+  row: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  col: {
+    width: "50%",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    // borderWidth: 1,
+  },
+  bottom: {
+    marginTop: 3,
   },
 });
