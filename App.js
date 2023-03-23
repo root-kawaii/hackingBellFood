@@ -18,7 +18,7 @@ export default function App() {
   const check = getData();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="Login"
           component={Login}
