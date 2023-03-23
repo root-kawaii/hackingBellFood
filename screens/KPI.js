@@ -28,19 +28,12 @@ const DATA = [
     data: {
       title: "Greenhouse",
       Viz: Hbar,
-      viz_data: {
-        labels: [
-          <SnowFlake name="snowflake-o" />,
-          <Flower name="flower" />,
-          Sun,
-          Leaf,
-        ],
-        datasets: [
-          {
-            data: [20, 45, 28, 80, 99, 43],
-          },
-        ],
-      },
+      viz_data: [
+        { x: "Winter", y: 24 },
+        { x: "Spring", y: 32 },
+        { x: "Summer", y: 45 },
+        { x: "Autumn", y: 24 },
+      ],
     },
   },
   {
@@ -49,22 +42,10 @@ const DATA = [
       title: "Cake",
       Viz: Cake,
       viz_data: [
-        {
-          value: 250,
-          color: "green",
-        },
-        {
-          value: 500,
-          color: "red",
-        },
-        {
-          value: 150,
-          color: "grey",
-        },
-        {
-          value: 320,
-          color: "yellow",
-        },
+        { x: "Unavaliable", y: 24 },
+        { x: "Bad", y: 32 },
+        { x: "Medium", y: 45 },
+        { x: "Good", y: 24 },
       ],
     },
   },
@@ -82,7 +63,7 @@ const Item = ({ data, onPress, backgroundColor, textColor }) => {
       style={[styles.item, { backgroundColor }]}
     >
       <View>
-        <Text>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
         <Viz data={viz_data} />
       </View>
       {/* <Text style={[styles.title, { color: textColor }]}>{data.title}</Text> */}
@@ -94,7 +75,7 @@ export default function KPIScreen() {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#679436" : "#fff";
+    const backgroundColor = item.id === selectedId ? "#fff" : "#fff";
     const color = item.id === selectedId ? "white" : "black";
 
     return (
@@ -129,6 +110,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 32,
+    fontSize: 20,
+    textAlign: "center",
   },
 });
