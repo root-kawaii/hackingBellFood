@@ -4,25 +4,34 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 import { Card, Button } from "react-native-paper";
 import { ScrollView, StatusBar } from "react-native";
+import { colors } from "../constants/colors";
 
 const CHALLENGES = [];
 
 const Carta = ({ title, subtitle, position, points }) => {
   return (
-    <Card style={styles.card}>
-      <Text style={styles.info}>
-        <Text style={styles.position}> {position}. </Text>
-        <Text style={styles.titleCard}> {title} </Text>
-        {"\n"}
-        <Text style={styles.subtitle}> {subtitle} </Text>
+    <View
+      style={[
+        styles.card,
+        {
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        },
+      ]}
+    >
+      <View style={{ flexDirection: "row" }}>
+        <Text style={styles.position}>{position}.</Text>
+        <View>
+          <Text style={styles.titleCard}>{title}</Text>
+          <Text>{subtitle}</Text>
+        </View>
+      </View>
+      <Text style={{ fontSize: 30 }}>
+        {points}
+        <Ionicons name={"flower-outline"} size={30} color={"tomato"} />
       </Text>
-      <Text style={styles.nums}>
-        <Text style={{ fontSize: 30 }}>
-          {points}{" "}
-          <Ionicons name={"flower-outline"} size={30} color={"tomato"} />
-        </Text>
-      </Text>
-    </Card>
+    </View>
   );
 };
 
@@ -40,32 +49,28 @@ export default function HomeScreen() {
           <Text style={styles.title}>March '23</Text>
         </View>
 
-        <ScrollView style={styles.ranking}>
+        <ScrollView>
           <Carta
             title={"Bell Schweiz"}
             subtitle={"Zell"}
             position={1}
             points={124}
           />
-
           <Carta
             title={"Bell Deutschland"}
             subtitle={"Schiltach"}
             position={2}
             points={89}
           />
-
           <Carta
             title={"Eisberg"}
             subtitle={"Dällikon Feldhof"}
             position={3}
             points={78}
           />
-
           <Carta title={"Hilcona"} subtitle={"Orbe"} position={4} points={57} />
-
           <Carta
-            title={"Süddeutsche Truthahn AG"}
+            title={"Süddeutsche Truthahn"}
             subtitle={"Ampfing"}
             position={5}
             points={45}
@@ -96,34 +101,29 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginLeft: 5,
     marginRight: 5,
-    padding: 7,
+    padding: 10,
+    borderStartColor: "light",
+    backgroundColor: colors.light,
+    borderRadius: 10,
+    shadowColor: "black",
+    shadowOffset: 10,
+    elevation: 3,
   },
   container: {
-    // display:"flex",
     flex: 1,
-    justifyContent: "flex-end",
-    padding: 10,
+    flexDirection: "column",
     backgroundColor: "#ecf0f1",
   },
   info: {
-    width: "60%",
     backgroundColor: "red",
-    flex: 1,
-    flexDirection: "row",
-    alignSelf: "flex-start",
   },
   nums: {
-    width: "40%",
     backgroundColor: "yellow",
-    flex: 1,
-    flexDirection: "row",
-    alignSelf: "flex-end",
   },
   titleCard: {
     fontSize: 22,
     fontWeight: "bold",
-    textAlign: "center",
-    margin: 10,
+    textAlign: "left",
   },
   position: {
     fontSize: 16,
