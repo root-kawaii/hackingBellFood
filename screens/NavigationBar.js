@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./Home";
-import Footprint from "./Footprint"
+import Footprint from "./Footprint";
 import RankScreen from "./Rank";
 import KPIScreen from "./KPI";
 import QR from "./QR";

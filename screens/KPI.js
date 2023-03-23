@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Cake from "./viz/Cake";
+import Cow from "./viz/Cow";
 import Water from "./viz/Water";
 import Hbar from "./viz/HBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -64,6 +65,17 @@ const DATA = [
       hidden: "ueue",
     },
   },
+  {
+      id: 4,
+      data: {
+        title: "Animal Welfare",
+        Viz: Cow,
+        description:
+          "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+        hidden:
+          "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+      },
+  }
 ];
 
 const Item = ({ data, onPress, backgroundColor, textColor }) => {
