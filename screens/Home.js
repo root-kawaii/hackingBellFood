@@ -7,40 +7,6 @@ import React from "react";
 import { Card, Button } from "react-native-paper";
 import { useState } from "react";
 
-const App = () => {
-  const [elementVisible, setElementVisible] = useState(false);
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View
-        style={{
-          padding: 20,
-          flex: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {elementVisible ? (
-          <View
-            style={{
-              backgroundColor: "blue",
-              paddingHorizontal: 16,
-              paddingVertical: 8,
-              marginBottom: 20,
-            }}
-          >
-            <Text style={{ color: "white", fontSize: 18 }}>Hello world!</Text>
-          </View>
-        ) : null}
-        <Button
-          title={elementVisible ? "Hide Element" : "Show Element"}
-          onPress={() => setElementVisible(!elementVisible)}
-        />
-      </View>
-    </SafeAreaView>
-  );
-};
-
 const CHALLENGES = [
   {
     id: 1,
@@ -78,9 +44,11 @@ const Score = () => {
     <Text
       style={{
         textAlign: "center",
+        right: 0,
+        left: 0,
         color: "black",
         fontWeight: "bold",
-        fontSize: 24,
+        fontSize: 50,
       }}
     >
       {points}
@@ -89,7 +57,7 @@ const Score = () => {
 };
 
 const Icon = () => {
-  return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
+  return <Ionicons name={"flower-outline"} size={48} color={"tomato"} />;
 };
 
 const Carta = ({ title, content, reward, buttonText, todo, onPress }) => {
@@ -98,8 +66,8 @@ const Carta = ({ title, content, reward, buttonText, todo, onPress }) => {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.paragraph}>{content}</Text>
         <Card.Actions>
-          <Text style={styles.paragraph}>{reward}</Text>
-          <Button onPress={onPress}>{buttonText}</Button>
+          <Text style={styles.paragraph}>{reward}<Ionicons name={"flower-outline"} size={12} color={"tomato"} /></Text>
+          <Button buttonColor="green" onPress={onPress}>{buttonText}</Button>
         </Card.Actions>
       </Card>
       );
@@ -127,12 +95,8 @@ export default function HomeScreen() {
   
   return (
     <View style={styles.container}>
-      <App />
-      <Text style={styles.score}>aaaaaaaaaaaaaa</Text>
-
       <Text style={styles.score}>
-        {" "}
-        <Score /> <Icon />{" "}
+        <Score /> <Icon />
       </Text>
 
       <FlatList

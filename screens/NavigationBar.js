@@ -23,7 +23,7 @@ export default function NavigationBar() {
 
           switch (route.name) {
             case "Home":
-              iconName = "ios-information-circle";
+              iconName = "albums";
               break;
             case "Ranking":
               iconName = "trophy";
