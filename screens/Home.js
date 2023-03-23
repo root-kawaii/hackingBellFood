@@ -25,16 +25,18 @@ const Icon = () => {
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text> <Score /> <Icon /> </Text>
+      <Text style={styles.score}> <Score /> <Icon /> </Text>
 
       <Card>
+      <Text style={styles.title}>
+          Challenge 1
+        </Text>
         <Text style={styles.paragraph}>
           React Native Card View for Android and IOS using
           "react-native-paper"
         </Text>
         <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
+          <Button>complete</Button>
         </Card.Actions>
       </Card>
 
@@ -44,16 +46,27 @@ export default function HomeScreen() {
 
 
 const styles = StyleSheet.create({
+  score: {
+    justifyContent: 'center',
+    marginTop: 20,
+    marginBottom: 20,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     padding: 20,
     backgroundColor: '#ecf0f1',
   },
-  paragraph: {
+  title: {
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
-    padding: 20
+    margin: 10
+  },
+  paragraph: {
+    fontSize: 14,
+    fontWeight: 'normal',
+    textAlign: 'center',
+    padding: 10
   },
 });
