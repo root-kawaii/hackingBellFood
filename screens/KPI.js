@@ -16,6 +16,7 @@ import SnowFlake from "react-native-vector-icons/FontAwesome";
 import Sun from "react-native-vector-icons/FontAwesome5";
 import Flower from "react-native-vector-icons/MaterialCommunityIcons";
 import Leaf from "react-native-vector-icons/FontAwesome5";
+import col from "../constants/colors";
 
 const DATA = [
   {
@@ -28,27 +29,10 @@ const DATA = [
       title: "Greenhouse",
       Viz: Hbar,
       viz_data: [
-        {
-          value: 250,
-          label: <SnowFlake name="snowflake-o" size={18} color="#900" />,
-        },
-
-        {
-          value: 500,
-          label: <Flower name="flower" size={18} color="#900" />,
-          frontColor: "#177AD5",
-        },
-
-        {
-          value: 745,
-          label: <Sun name="sun" size={18} color="#900" />,
-          frontColor: "#177AD5",
-        },
-
-        {
-          value: 320,
-          label: <Leaf name="leaf" size={18} color="#900" />,
-        },
+        { x: "Winter", y: 24 },
+        { x: "Spring", y: 32 },
+        { x: "Summer", y: 45 },
+        { x: "Autumn", y: 24 },
       ],
     },
   },
@@ -59,20 +43,39 @@ const DATA = [
       Viz: Cake,
       viz_data: [
         {
-          value: 250,
-          color: "green",
+          name: "Seoul",
+          population: 128,
+          color: "rgba(131, 167, 234, 1)",
+          legendFontColor: "#7F7F7F",
+          legendFontSize: 15,
         },
         {
-          value: 500,
+          name: "Toronto",
+          population: 256,
+          color: "#F00",
+          legendFontColor: "#7F7F7F",
+          legendFontSize: 15,
+        },
+        {
+          name: "Beijing",
+          population: 89,
           color: "red",
+          legendFontColor: "#7F7F7F",
+          legendFontSize: 15,
         },
         {
-          value: 150,
-          color: "grey",
+          name: "New York",
+          population: 74,
+          color: "#123455",
+          legendFontColor: "#7F7F7F",
+          legendFontSize: 15,
         },
         {
-          value: 320,
-          color: "yellow",
+          name: "Moscow",
+          population: 276,
+          color: "rgb(0, 0, 255)",
+          legendFontColor: "#7F7F7F",
+          legendFontSize: 15,
         },
       ],
     },
@@ -91,7 +94,7 @@ const Item = ({ data, onPress, backgroundColor, textColor }) => {
       style={[styles.item, { backgroundColor }]}
     >
       <View>
-        <Text>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
         <Viz data={viz_data} />
       </View>
       {/* <Text style={[styles.title, { color: textColor }]}>{data.title}</Text> */}
@@ -103,7 +106,7 @@ export default function KPIScreen() {
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
+    const backgroundColor = item.id === selectedId ? "#fff" : "#fff";
     const color = item.id === selectedId ? "white" : "black";
 
     return (
@@ -138,6 +141,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 32,
+    fontSize: 20,
+    textAlign: "center",
   },
 });
