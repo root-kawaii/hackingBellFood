@@ -1,12 +1,9 @@
-import {
-  Text,
-  View,
-  FlatList,
- } from "react-native";
-import { SafeAreaView, StyleSheet, Image } from 'react-native';
-import Ionicons       from "react-native-vector-icons/Ionicons";
-import React          from 'react';
-import { Card, Button }       from 'react-native-paper';
+import { Text, View, FlatList } from "react-native";
+import { SafeAreaView, StyleSheet, Image } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import React from "react";
+import { Card, Button } from "react-native-paper";
+import quizPage from "../quizPage";
 
 const CHALLENGES = [
   {
@@ -14,6 +11,11 @@ const CHALLENGES = [
     title: "Line-dry clothes",
     content: "let the clothes dry naturally, save energy",
     reward: 100,
+<<<<<<< HEAD
+=======
+    buttonText: "complete",
+    onPress: { quizPage },
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
   },
   {
     id: 2,
@@ -28,7 +30,6 @@ const CHALLENGES = [
     reward: 50,
   },
 ];
-
 
 const Score = () => {
   return (
@@ -49,6 +50,7 @@ const Icon = () => {
   return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
 };
 
+<<<<<<< HEAD
 
 const Carta = ({title, content, reward, buttonText}) => {
   return <Card style={styles.card}>
@@ -64,21 +66,57 @@ const Carta = ({title, content, reward, buttonText}) => {
 const renderItem = ({ item }) => {
   return (
     <Carta title={item.title} content={item.content} reward={item.reward} buttonText={"complete"}/>
+=======
+const Carta = ({ title, content, reward, buttonText, onPress }) => {
+  return (
+    <Card style={styles.card}>
+      <Text style={styles.title}> {title} </Text>
+      <Text style={styles.paragraph}> {content} </Text>
+      <Card.Actions>
+        <Text style={styles.paragraph}> {reward} </Text>
+        <Button onPress={onPress}>{content}</Button>
+      </Card.Actions>
+    </Card>
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
   );
 };
 
+const renderItem = ({ item }) => {
+  return (
+    <Carta
+      title={item.title}
+      content={item.content}
+      reward={item.reward}
+      buttonText={item.buttonText}
+    />
+  );
+};
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.score}> <Score /> <Icon /> </Text>
+      <Text style={styles.score}>
+        {" "}
+        <Score /> <Icon />{" "}
+      </Text>
 
+<<<<<<< HEAD
+=======
+      <Carta
+        title={"Challenge"}
+        content={
+          "testo react Native Card View for Android and IOS using react-native-paper"
+        }
+        reward={10}
+        buttonText={"complete"}
+      />
+
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
       <FlatList
         data={CHALLENGES}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-
     </View>
   );
 }
@@ -90,7 +128,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   card: {
+<<<<<<< HEAD
     justifyContent: 'flex-start',
+=======
+    justifyContent: "left",
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
     margin: 20,
     padding: 10,
   },
