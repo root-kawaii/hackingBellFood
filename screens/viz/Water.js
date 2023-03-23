@@ -5,7 +5,7 @@ export default function Water({ data }) {
   return (
     <Text>
       {data}
-      <Icon />
+      <Icon name="cow" size={150} color="#900" />
     </Text>
   );
 }

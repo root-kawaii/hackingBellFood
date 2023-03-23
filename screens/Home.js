@@ -34,14 +34,18 @@ const CHALLENGES = [
 
 
 const Score = () => {
-  return <Text
-  style={{
-    textAlign: 'center',
-    color: 'black',
-    fontWeight: 'bold',
-    fontSize: 24,
-  }}>
-    123 </Text> ;
+  return (
+    <Text
+      style={{
+        textAlign: "center",
+        color: "black",
+        fontWeight: "bold",
+        fontSize: 24,
+      }}
+    >
+      123{" "}
+    </Text>
+  );
 };
 
 const Icon = () => {
@@ -84,10 +88,9 @@ export default function HomeScreen() {
   );
 }
 
-
 const styles = StyleSheet.create({
   score: {
-    justifyContent: 'center',
+    justifyContent: "center",
     marginTop: 20,
     marginBottom: 20,
   },
@@ -98,20 +101,20 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 20,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: "#ecf0f1",
   },
   title: {
     fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    margin: 10
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 10,
   },
   paragraph: {
     fontSize: 14,
-    fontWeight: 'normal',
-    textAlign: 'center',
-    padding: 10
+    fontWeight: "normal",
+    textAlign: "center",
+    padding: 10,
   },
 });
