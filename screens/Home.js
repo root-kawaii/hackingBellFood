@@ -28,8 +28,7 @@ const CHALLENGES = [
   {
     id: 3,
     title: "Use LED lights",
-    content:
-      "get rid of all the highly inefficient lights and substitute them with ",
+    content: "get rid of all the highly inefficient lights and substitute them with highly efficient led lights and reduce carbon emissions",
     reward: 50,
   },
 ];
