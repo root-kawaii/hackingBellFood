@@ -2,7 +2,7 @@ import { Text, View, FlatList } from "react-native";
 import { SafeAreaView, StyleSheet, Image } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
-import { Card, Button } from "react-native-paper";
+import { Card, Button, IconButton } from "react-native-paper";
 import { useState } from 'react';
 
 const App = () => {
@@ -114,10 +114,21 @@ const renderItem = ({ item }) => {
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <App style={height: 50, backgroundColor: yellow} />
+      <View style={styles.topContainer}>
+        <IconButton
+          icon="foot-print"
+          iconColor={"blue"}
+          size={20}
+          onPress={() => navigation.navigate("Footprint")}
+        />
+      </View>
+      
+      <App  />
       <Text style={styles.score}>
         aaaaaaaaaaaaaa
       </Text>
+
+
       <Text style={styles.score}>
         {" "} <Score /> <Icon />{" "}
       </Text>
@@ -148,6 +159,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#ecf0f1",
+  },
+  topContainer: {
+    flexDirection: 'row',
+    justifyContent: "flex-end",
+    position: 'absolute',
+    top: 10,
+    right: 0,
+    left: 0,
     padding: 20,
     backgroundColor: "#ecf0f1",
   },
