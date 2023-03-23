@@ -18,7 +18,8 @@ export default function FootprintScreen() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View>
-        <Text style={styles.title}>Your CO2 Footprint</Text>
+        <Text style={styles.title}>Ecological Footprint</Text>
+        <Text style={styles.title}>42 sqKm</Text>
       </View>
       <View style={styles.container}>
         <VictoryBar
