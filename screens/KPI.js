@@ -18,7 +18,25 @@ const DATA = [
   },
   {
     id: 2,
-    data: { title: "Greenhouse", Viz: Hbar, viz_data: [1, 2, 3] },
+    data: {
+      title: "Greenhouse",
+      Viz: Hbar,
+      viz_data: [
+        { value: 250, label: "M" },
+
+        { value: 500, label: "T", frontColor: "#177AD5" },
+
+        { value: 745, label: "W", frontColor: "#177AD5" },
+
+        { value: 320, label: "T" },
+
+        { value: 600, label: "F", frontColor: "#177AD5" },
+
+        { value: 256, label: "S" },
+
+        { value: 300, label: "S" },
+      ],
+    },
   },
 ];
 
