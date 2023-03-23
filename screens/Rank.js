@@ -42,25 +42,6 @@ const CHALLENGES = [
   },
 ];
 
-const Score = () => {
-  return (
-    <Text
-      style={{
-        textAlign: "center",
-        color: "black",
-        fontWeight: "bold",
-        fontSize: 24,
-      }}
-    >
-      123{" "}
-    </Text>
-  );
-};
-
-const Icon = () => {
-  return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
-};
-
 const Carta = ({ title, content, reward, buttonText }) => {
   return (
     <Card style={styles.card}>
@@ -87,10 +68,6 @@ const renderItem = ({ item }) => {
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.score}>
-        {" "}
-        <Score /> <Icon />{" "}
-      </Text>
 
       <Carta
         title={"PODIUM"}
