@@ -11,22 +11,23 @@ const CHALLENGES = [
     title: "Line-dry clothes",
     content: "let the clothes dry naturally, save energy",
     reward: 100,
+<<<<<<< HEAD
+=======
     buttonText: "complete",
     onPress: { quizPage },
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
   },
   {
     id: 2,
-    title: "2",
-    content: "let the clothes dry naturally, save energy",
-    reward: 100,
-    buttonText: "complete",
+    title: "Go vegan for a day",
+    content: "eating veggies instead of meat can reduce your carbon footprint, try veggies from local farmers instead of imported veggies",
+    reward: 200,
   },
   {
     id: 3,
-    title: "3",
-    content: "let the clothes dry naturally, save energy",
-    reward: 100,
-    buttonText: "complete",
+    title: "Use LED lights",
+    content: "get rid of all the highly inefficient lights and substitute them with ",
+    reward: 50,
   },
 ];
 
@@ -49,6 +50,23 @@ const Icon = () => {
   return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
 };
 
+<<<<<<< HEAD
+
+const Carta = ({title, content, reward, buttonText}) => {
+  return <Card style={styles.card}>
+    <Text style={styles.title}> {title} </Text>
+    <Text style={styles.paragraph}> {content} </Text>
+    <Card.Actions>
+    <Text style={styles.paragraph}> {reward} </Text>
+      <Button>{buttonText}</Button>
+    </Card.Actions>
+  </Card>
+}
+
+const renderItem = ({ item }) => {
+  return (
+    <Carta title={item.title} content={item.content} reward={item.reward} buttonText={"complete"}/>
+=======
 const Carta = ({ title, content, reward, buttonText, onPress }) => {
   return (
     <Card style={styles.card}>
@@ -59,6 +77,7 @@ const Carta = ({ title, content, reward, buttonText, onPress }) => {
         <Button onPress={onPress}>{content}</Button>
       </Card.Actions>
     </Card>
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
   );
 };
 
@@ -81,6 +100,8 @@ export default function HomeScreen() {
         <Score /> <Icon />{" "}
       </Text>
 
+<<<<<<< HEAD
+=======
       <Carta
         title={"Challenge"}
         content={
@@ -90,6 +111,7 @@ export default function HomeScreen() {
         buttonText={"complete"}
       />
 
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
       <FlatList
         data={CHALLENGES}
         renderItem={renderItem}
@@ -106,7 +128,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   card: {
+<<<<<<< HEAD
+    justifyContent: 'flex-start',
+=======
     justifyContent: "left",
+>>>>>>> a0e21a218f4ea01fa781158e375c460dd3ccc6df
     margin: 20,
     padding: 10,
   },
@@ -125,7 +151,8 @@ const styles = StyleSheet.create({
   paragraph: {
     fontSize: 14,
     fontWeight: "normal",
-    textAlign: "center",
+    textAlign: "left",
+    justifyContent: "space-evenly",
     padding: 10,
   },
 });
