@@ -8,8 +8,14 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
+import Cake from "./viz/Cake";
 import Water from "./viz/Water";
 import Hbar from "./viz/HBar";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import SnowFlake from "react-native-vector-icons/FontAwesome";
+import Sun from "react-native-vector-icons/FontAwesome5";
+import Flower from "react-native-vector-icons/MaterialCommunityIcons";
+import Leaf from "react-native-vector-icons/FontAwesome5";
 
 const DATA = [
   {
@@ -22,19 +28,52 @@ const DATA = [
       title: "Greenhouse",
       Viz: Hbar,
       viz_data: [
-        { value: 250, label: "M" },
+        {
+          value: 250,
+          label: <SnowFlake name="snowflake-o" size={18} color="#900" />,
+        },
 
-        { value: 500, label: "T", frontColor: "#177AD5" },
+        {
+          value: 500,
+          label: <Flower name="flower" size={18} color="#900" />,
+          frontColor: "#177AD5",
+        },
 
-        { value: 745, label: "W", frontColor: "#177AD5" },
+        {
+          value: 745,
+          label: <Sun name="sun" size={18} color="#900" />,
+          frontColor: "#177AD5",
+        },
 
-        { value: 320, label: "T" },
-
-        { value: 600, label: "F", frontColor: "#177AD5" },
-
-        { value: 256, label: "S" },
-
-        { value: 300, label: "S" },
+        {
+          value: 320,
+          label: <Leaf name="leaf" size={18} color="#900" />,
+        },
+      ],
+    },
+  },
+  {
+    id: 3,
+    data: {
+      title: "Cake",
+      Viz: Cake,
+      viz_data: [
+        {
+          value: 250,
+          color: "green",
+        },
+        {
+          value: 500,
+          color: "red",
+        },
+        {
+          value: 150,
+          color: "grey",
+        },
+        {
+          value: 320,
+          color: "yellow",
+        },
       ],
     },
   },

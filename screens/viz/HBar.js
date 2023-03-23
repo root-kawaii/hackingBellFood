@@ -9,8 +9,8 @@ export default function HBar({ data }) {
         initialSpacing={10}
         barStyle="none"
         height={50}
-        width={200}
-        spacing={10}
+        width={300}
+        spacing={30}
         labelWidth={0}
         barWidth={10}
         noOfSections={1}
