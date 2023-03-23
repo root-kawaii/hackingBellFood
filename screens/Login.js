@@ -1,8 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
 import React, { useState } from "react";
-
 import {
   StyleSheet,
   Text,
@@ -17,7 +15,6 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -47,8 +44,9 @@ export default function Login({ navigation }) {
 
       <TouchableOpacity style={styles.loginBtn}>
         <Button
+          title="navigate"
           style={styles.loginText}
-          onPress={() => navigation.navigate("Home", { name: "Jane" })}
+          onPress={() => navigation.navigate("Base")}
         >
           LOGIN
         </Button>

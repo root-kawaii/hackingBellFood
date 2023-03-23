@@ -14,17 +14,22 @@ const CHALLENGES = [
     title: "Line-dry clothes",
     content: "let the clothes dry naturally, save energy",
     reward: 100,
+
+    buttonText: "complete",
+    onPress: { quizPage },
   },
   {
     id: 2,
     title: "Go vegan for a day",
-    content: "eating veggies instead of meat can reduce your carbon footprint, try veggies from local farmers instead of imported veggies",
+    content:
+      "eating veggies instead of meat can reduce your carbon footprint, try veggies from local farmers instead of imported veggies",
     reward: 200,
   },
   {
     id: 3,
     title: "Use LED lights",
-    content: "get rid of all the highly inefficient lights and substitute them with the more efficient led lights",
+    content:
+      "get rid of all the highly inefficient lights and substitute them with ",
     reward: 50,
   },
 ];
@@ -49,21 +54,16 @@ const Icon = () => {
   return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
 };
 
-
-const Carta = ({title, content, reward, buttonText}) => {
-  return <Card style={styles.card}>
-    <Text style={styles.title}> {title} </Text>
-    <Text style={styles.paragraph}> {content} </Text>
-    <Card.Actions>
-    <Text style={styles.paragraph}> {reward} </Text>
-      <Button>{buttonText}</Button>
-    </Card.Actions>
-  </Card>
-}
-
-const renderItem = ({ item }) => {
+const Carta = ({ title, content, reward, buttonText, onPress }) => {
   return (
-    <Carta title={item.title} content={item.content} reward={item.reward} buttonText={"complete"}/>
+    <Card style={styles.card}>
+      <Text style={styles.title}> {title} </Text>
+      <Text style={styles.paragraph}> {content} </Text>
+      <Card.Actions>
+        <Text style={styles.paragraph}> {reward} </Text>
+        <Button onPress={onPress}>{content}</Button>
+      </Card.Actions>
+    </Card>
   );
 };
 
@@ -71,8 +71,18 @@ const renderItem = ({ item }) => {
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.score}> <Score /> <Icon /> </Text>
-
+      <Text style={styles.score}>
+        {" "}
+        <Score /> <Icon />{" "}
+      </Text>
+      <Carta
+        title={"Challenge"}
+        content={
+          "testo react Native Card View for Android and IOS using react-native-paper"
+        }
+        reward={10}
+        buttonText={"complete"}
+      />
       <FlatList
         data={CHALLENGES}
         renderItem={renderItem}
@@ -90,7 +100,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   card: {
-    justifyContent: 'flex-start',
+    justifyContent: "left",
+
     margin: 20,
     padding: 10,
   },
