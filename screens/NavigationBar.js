@@ -29,8 +29,8 @@ export default function NavigationBar() {
               break;
             case "KPI":
               iconName = "cellular";
-            case "QR":
-              iconName = "camera";
+            // case "QR":
+            //   iconName = "camera";
           }
           !focused && (iconName += "-outline");
 
@@ -44,7 +44,7 @@ export default function NavigationBar() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Ranking" component={RankScreen} />
       <Tab.Screen name="KPI" component={KPIScreen} />
-      <Tab.Screen name="QR" component={QR} />
+      {/* <Tab.Screen name="QR" component={QR} /> */}
     </Tab.Navigator>
   );
 }

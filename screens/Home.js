@@ -1,12 +1,8 @@
-import {
-  Text,
-  View,
-  FlatList,
- } from "react-native";
-import { SafeAreaView, StyleSheet, Image } from 'react-native';
-import Ionicons       from "react-native-vector-icons/Ionicons";
-import React          from 'react';
-import { Card, Button }       from 'react-native-paper';
+import { Text, View, FlatList } from "react-native";
+import { SafeAreaView, StyleSheet, Image } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import React from "react";
+import { Card, Button } from "react-native-paper";
 
 const CHALLENGES = [
   {
@@ -14,26 +10,23 @@ const CHALLENGES = [
     title: "Line-dry clothes",
     content: "let the clothes dry naturally, save energy",
     reward: 100,
-
     buttonText: "complete",
-    onPress: { quizPage },
   },
   {
     id: 2,
-    title: "Go vegan for a day",
-    content:
-      "eating veggies instead of meat can reduce your carbon footprint, try veggies from local farmers instead of imported veggies",
-    reward: 200,
+    title: "2",
+    content: "let the clothes dry naturally, save energy",
+    reward: 100,
+    buttonText: "complete",
   },
   {
     id: 3,
-    title: "Use LED lights",
-    content:
-      "get rid of all the highly inefficient lights and substitute them with ",
-    reward: 50,
+    title: "3",
+    content: "let the clothes dry naturally, save energy",
+    reward: 100,
+    buttonText: "complete",
   },
 ];
-
 
 const Score = () => {
   return (
@@ -54,19 +47,29 @@ const Icon = () => {
   return <Ionicons name={"flower-outline"} size={24} color={"tomato"} />;
 };
 
-const Carta = ({ title, content, reward, buttonText, onPress }) => {
+const Carta = ({ title, content, reward, buttonText }) => {
   return (
     <Card style={styles.card}>
       <Text style={styles.title}> {title} </Text>
       <Text style={styles.paragraph}> {content} </Text>
       <Card.Actions>
         <Text style={styles.paragraph}> {reward} </Text>
-        <Button onPress={onPress}>{content}</Button>
+        <Button>{content}</Button>
       </Card.Actions>
     </Card>
   );
 };
 
+const renderItem = ({ item }) => {
+  return (
+    <Carta
+      title={item.title}
+      content={item.content}
+      reward={item.reward}
+      buttonText={item.buttonText}
+    />
+  );
+};
 
 export default function HomeScreen() {
   return (
@@ -75,6 +78,7 @@ export default function HomeScreen() {
         {" "}
         <Score /> <Icon />{" "}
       </Text>
+
       <Carta
         title={"Challenge"}
         content={
@@ -83,12 +87,12 @@ export default function HomeScreen() {
         reward={10}
         buttonText={"complete"}
       />
+
       <FlatList
         data={CHALLENGES}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
-
     </View>
   );
 }
@@ -101,7 +105,6 @@ const styles = StyleSheet.create({
   },
   card: {
     justifyContent: "left",
-
     margin: 20,
     padding: 10,
   },
@@ -120,8 +123,7 @@ const styles = StyleSheet.create({
   paragraph: {
     fontSize: 14,
     fontWeight: "normal",
-    textAlign: "left",
-    justifyContent: "space-evenly",
+    textAlign: "center",
     padding: 10,
   },
 });
