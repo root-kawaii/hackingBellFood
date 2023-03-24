@@ -22,16 +22,15 @@ import { colors } from "../constants/colors";
 const DATA = [
   {
     id: 1,
-    data: { 
-      title: "Water", 
-      Viz: Water, 
+    data: {
+      title: "Water",
+      Viz: Water,
       viz_data: [10, 50],
       description:
         "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
       hidden:
         "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
     },
-
   },
   {
     id: 2,
@@ -66,16 +65,16 @@ const DATA = [
     },
   },
   {
-      id: 4,
-      data: {
-        title: "Animal Welfare",
-        Viz: Cow,
-        description:
-          "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
-        hidden:
-          "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
-      },
-  }
+    id: 4,
+    data: {
+      title: "Animal Welfare",
+      Viz: Cow,
+      description:
+        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+      hidden:
+        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+    },
+  },
 ];
 
 const Item = ({ data, onPress, backgroundColor, textColor }) => {

@@ -13,12 +13,13 @@ const Carta = ({ title, subtitle, position, points }) => {
       <Text style={styles.info}>
         <Text style={styles.position}> {position}. </Text>
         <Text style={styles.titleCard}> {title} </Text>
-        {"\n"}
+        {""}
         <Text style={styles.subtitle}> {subtitle} </Text>
       </Text>
       <Text style={styles.nums}>
         <Text style={{ fontSize: 30 }}>
-          {points}{" "}
+          {points}
+          {""}
           <Ionicons name={"flower-outline"} size={30} color={"tomato"} />
         </Text>
       </Text>
@@ -129,6 +130,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
     textAlign: "center",
-    padding: 5,
+    padding: 0,
   },
 });

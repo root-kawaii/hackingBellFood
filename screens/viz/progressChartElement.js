@@ -11,29 +11,29 @@ import {
 import { Dimensions } from "react-native";
 const screenWidth = Dimensions.get("window").width;
 const chartConfig = {
-  backgroundGradientFrom: "#1E2923",
-  backgroundGradientTo: "#08130D",
-  color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+  backgroundGradientFrom: "#95D5B2",
+  backgroundGradientTo: "#95D5B2",
+  color: (opacity = 1) => `rgba(8, 28, 21, ${opacity})`,
 };
 
-const data = [0.37, 0.42, 0.12, 0.32, 0.32];
-
-export default function ProgressChartElement() {
+export default function ProgressChartElement({ data }) {
+  var yo = [];
+  yo.push(data[0] / data[1]);
+  console.log(yo);
   return (
     <View
       style={{
-        paddingVertical: 100,
-
-        backgroundColor: "#000",
-
+        backgroundColor: "transparent",
         flex: 1,
       }}
     >
       <ProgressChart
-        data={data}
+        radius={100}
+        data={yo}
         width={screenWidth}
         height={220}
         chartConfig={chartConfig}
+        hideLegend={true}
       />
       <View style={{ padding: 20, alignItems: "center" }}></View>
     </View>

@@ -9,7 +9,7 @@ import HomeScreen from "./Home";
 import Footprint from "./Footprint";
 import RankScreen from "./Rank";
 import KPIScreen from "./KPI";
-import QR from "./QR";
+import QuizPage from "../QuizPage";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Tab = createBottomTabNavigator();
@@ -33,8 +33,10 @@ export default function NavigationBar() {
               break;
             case "KPI":
               iconName = "cellular";
-            // case "QR":
-            //   iconName = "camera";
+              break;
+            case "Quiz":
+              iconName = "help";
+              break;
           }
           !focused && (iconName += "-outline");
 
@@ -49,7 +51,7 @@ export default function NavigationBar() {
       <Tab.Screen name="Ranking" component={RankScreen} />
       <Tab.Screen name="Footprint" component={Footprint} />
       <Tab.Screen name="KPI" component={KPIScreen} />
-      {/* <Tab.Screen name="QR" component={QR} /> */}
+      <Tab.Screen name="Quiz" component={QuizPage} />
     </Tab.Navigator>
   );
 }
