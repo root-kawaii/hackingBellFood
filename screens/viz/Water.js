@@ -26,7 +26,7 @@ export default function Water({ data }) {
           }}
           labelComponent = {<VictoryLabel
           textAnchor="middle" verticalAnchor="middle"
-          x={35} y={80}
+          x={35} y={75}
           text={"10"}
           style={{ fontSize: 30 }}
           />}
@@ -48,7 +48,7 @@ export default function Water({ data }) {
           }}
           labelComponent = {<VictoryLabel
           textAnchor="middle" verticalAnchor="middle"
-          x={35} y={80}
+          x={35} y={75}
           text={"50"}
           style={{ fontSize: 30 }}
           />}
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
   },
   row: {
+    top: 10,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",

@@ -27,9 +27,9 @@ const DATA = [
       Viz: Water,
       viz_data: [10, 50],
       description:
-        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+        "We aim to reduce water consumption in our operations by 10% in non-risk areas and by 50% per unit of goods sold in risk areas by 2026.",
       hidden:
-        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+        "To reach this goals it is necessary to optimize our entire wastewater management.",
     },
   },
   {
@@ -46,7 +46,7 @@ const DATA = [
       description:
         "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social.",
       hidden:
-        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability.",
     },
   },
   {
@@ -60,8 +60,8 @@ const DATA = [
         { x: "Summer", y: -5 },
         { x: "Autumn", y: 6 },
       ],
-      description: "pippo antonio",
-      hidden: "ueue",
+      description: "We commit to science-based climate targets and so we aim to reduce our absolute greenhouse gas emissions by 21% by 2026.",
+      hidden: "We develop targets to reduce greenhouse gas emissions in our supply chain and promote corresponding measures and projects.",
     },
   },
   {
@@ -70,9 +70,9 @@ const DATA = [
       title: "Animal Welfare",
       Viz: Cow,
       description:
-        "An ESG score is an objective measurement or evaluation of a given company's performance with respect to Environmental, Social, and Governance (ESG) issues.",
+        "The next step is to get an animal welfare certfication on 37% of our animal raw materials and products across the Bell Food Group and 60% in Bell Switzerland, all of this by 2026.",
       hidden:
-        "ESG indicators are a key value to understand the efficacy of any company's environmental and social sustainability. They..",
+        "By 2022 we already have implemented a company-wide animal welfare policy.",
     },
   },
 ];

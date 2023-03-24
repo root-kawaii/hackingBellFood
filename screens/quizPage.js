@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import QuizeSingleChoice from "react-native-react-native-quiz-single-choice";
-import ProgressChartElement from "./screens/viz/progressChartElement";
+import ProgressChartElement from "./viz/progressChartElement";
 
 const data = [
   {

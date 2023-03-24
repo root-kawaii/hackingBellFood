@@ -6,10 +6,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./Home";
-import Footprint from "./Footprint";
+import Footprint from "./footprint";
 import RankScreen from "./Rank";
 import KPIScreen from "./KPI";
-import QuizPage from "../QuizPage";
+import QuizPage from "./quizPage";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Tab = createBottomTabNavigator();
