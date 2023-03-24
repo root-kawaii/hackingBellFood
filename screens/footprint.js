@@ -43,8 +43,11 @@ export default function FootprintScreen() {
           generate new resources. {"\n\n"} Your highest factor towards your
           Ecological Footprint is the{" "}
           <Text style={{ fontWeight: "bold" }}>High Water Usage</Text>; to lower
-          it, you could: ....TODO FAI UNA LISTA (innaffia meno chiudi la piscina
-          )
+          it, you could: {"\n"}- Check the WELS star rating label that indicates
+          water efficiency for consumers. {"\n"}- Check regularly for leaks or
+          dripping taps around your home. {"\n"}- It is also important to
+          consider your water use outdoors, which can be responsible for an
+          average of 40% of a household’s water use.
         </Text>
       </ScrollView>
     </SafeAreaView>
