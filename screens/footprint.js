@@ -1,6 +1,7 @@
 import { VictoryBar, VictoryLabel } from "victory-native";
 import { StyleSheet, View, Text } from "react-native";
 import { SafeAreaView } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function FootprintScreen() {
   const data = [
@@ -17,20 +18,35 @@ export default function FootprintScreen() {
         <Text style={styles.title}>Ecological Footprint</Text>
         <Text style={styles.title}>42 sqKm</Text>
       </View>
-      <View style={styles.container}>
-        <VictoryBar
-          labels={({ datum }) => `${datum.x}`}
-          labelComponent={<VictoryLabel dy={0} />}
-          barWidth={40}
-          horizontal
-          height={475}
-          style={{
-            flex: 1,
-            data: { fill: "#40916C" },
-          }}
-          data={data}
-        />
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <VictoryBar
+            labels={({ datum }) => `${datum.x}`}
+            labelComponent={<VictoryLabel dy={0} />}
+            barWidth={40}
+            horizontal
+            height={475}
+            style={{
+              flex: 1,
+              data: { fill: "#40916C" },
+            }}
+            data={data}
+            padding={{ top: 30, left: 12, right: 70, bottom: 60 }}
+          />
+        </View>
+        <Text style={{ padding: 10 }}>
+          The <Text style={{ fontWeight: "bold" }}>Ecological Footprint </Text>
+          measures the impact of a person or community on the environment,
+          expressed as the amount of land required to sustain their use of
+          natural resources. It measures how fast we consume resources and
+          generate waste compared to how fast nature can absorb our waste and
+          generate new resources. {"\n\n"} Your highest factor towards your
+          Ecological Footprint is the{" "}
+          <Text style={{ fontWeight: "bold" }}>High Water Usage</Text>; to lower
+          it, you could: ....TODO FAI UNA LISTA (innaffia meno chiudi la piscina
+          )
+        </Text>
+      </ScrollView>
     </SafeAreaView>
   );
 }
